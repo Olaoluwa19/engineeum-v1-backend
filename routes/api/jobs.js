@@ -7,10 +7,6 @@ const verifyRoles = require("../../middleware/verifyRoles");
 router
   .route("/")
   .get(verifyRoles(ROLES_LIST.Editor, ROLES_LIST.User), jobsController.getJobs)
-  .put(
-    verifyRoles(ROLES_LIST.Editor, ROLES_LIST.User),
-    jobsController.updateJob
-  )
   .delete(verifyRoles(ROLES_LIST.Editor), jobsController.deleteJobs);
 
 router
