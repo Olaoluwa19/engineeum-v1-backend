@@ -27,7 +27,7 @@ const jobSchema = new Schema(
       default: "Lagos",
       required: [true, "Work location is required."],
     },
-    user: {
+    createdBy: {
       type: Schema.Types.ObjectId,
       ref: "User",
       required: true,
