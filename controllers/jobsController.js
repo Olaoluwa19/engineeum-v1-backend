@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Job = require("../models/Job");
 const moment = require("moment");
+moment().format();
 
 const getJobs = async (req, res) => {
   const jobs = await Job.find();
@@ -140,11 +141,8 @@ const getJobStats = async (req, res) => {
         _id: { year, month },
         count,
       } = item;
-      const date = moment()
-        .month(month - 1)
-        .year(year)
-        .format("MMM Y");
-      return { date, count };
+      const date = moment([year, month - 1]); // Create a new moment object
+      return { date: date.format("MMM Y"), count }; // Use format() on the new object
     })
     .reverse();
 
