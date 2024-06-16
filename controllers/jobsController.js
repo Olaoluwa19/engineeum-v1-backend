@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Job = require("../models/Job");
+const moment = require("moment");
 
 const getJobs = async (req, res) => {
   const jobs = await Job.find();
@@ -18,13 +19,15 @@ const createJob = async (req, res) => {
       .json({ message: "Please fill in the required fields." });
   }
 
-  req.body.createdBy = req.params.userid;
+  req.body.createdBy = req.params.userId;
+  // req.body.createdBy = await Job.find({ user: req.user.userId }).exec();
 
   if (!mongoose.isValidObjectId(req.body.createdBy))
     return res
       .status(400)
       .json({ message: `No user ID matches ${req.body.createdBy}.` });
 
+  console.log(req.body.createdBy);
   const job = await Job.create(req.body);
   res.status(201).json({ job });
 };
@@ -88,10 +91,73 @@ const getUserJobs = async (req, res) => {
   });
 };
 
+const getJobStats = async (req, res) => {
+  const stats = await Job.aggregate([
+    // search by user jobs
+    {
+      $match: {
+        createdBy: new mongoose.Types.ObjectId(req.params.userId),
+      },
+    },
+    {
+      $group: {
+        _id: "$status",
+        count: { $sum: 1 },
+      },
+    },
+  ]);
+
+  // default stats
+  const defaultStats = {
+    pending: stats.pending || 0,
+    reject: stats.reject || 0,
+    interview: stats.interview || 0,
+  };
+
+  // monthly yearly stats
+  let monthlyApplication = await Job.aggregate([
+    {
+      $match: {
+        createdBy: new mongoose.Types.ObjectId(req.params.userId),
+      },
+    },
+    {
+      $group: {
+        _id: {
+          year: { $year: "$createdAt" },
+          month: { $month: "$createdAt" },
+        },
+        count: {
+          $sum: 1,
+        },
+      },
+    },
+  ]);
+
+  monthlyApplication = monthlyApplication
+    .map((item) => {
+      const {
+        _id: { year, month },
+        count,
+      } = item;
+      const date = moment()
+        .month(month - 1)
+        .year(year)
+        .format("MMM Y");
+      return { date, count };
+    })
+    .reverse();
+
+  res
+    .status(200)
+    .json({ totalJStats: stats.length, defaultStats, monthlyApplication });
+};
+
 module.exports = {
   getJobs,
   createJob,
   updateJob,
   deleteJobs,
   getUserJobs,
+  getJobStats,
 };

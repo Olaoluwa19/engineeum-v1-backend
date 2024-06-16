@@ -10,7 +10,13 @@ router
   .delete(verifyRoles(ROLES_LIST.Editor), jobsController.deleteJobs);
 
 router
-  .route("/:userid")
+  .route("/stats/:userId")
+  .get(
+    verifyRoles(ROLES_LIST.Editor, ROLES_LIST.User),
+    jobsController.getJobStats
+  );
+router
+  .route("/:userId")
   .get(
     verifyRoles(ROLES_LIST.Editor, ROLES_LIST.User),
     jobsController.getUserJobs

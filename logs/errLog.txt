@@ -1,44 +1,21 @@
-20240611	05:20:44	d5c50e11-4c91-4120-82e7-62a74143381b	Error : ENOENT: no such file or directory, stat 'C:\Users\ROTIMI\Documents\engineeum-v1\routes\ ..\views\index.html'
-20240611	06:38:33	06a383fe-7f71-4a12-be7d-3cd5840f1f14	Error : secret option required for sessions
-20240611	06:38:34	b27e218a-7c80-4af9-a673-95f449e588be	Error : secret option required for sessions
-20240611	06:38:34	17ed1736-7d7f-4878-9e83-ddba569fa357	Error : secret option required for sessions
-20240611	06:42:02	e0643871-9a31-4d2c-bd87-ced98b784e4d	Error : secret option required for sessions
-20240611	06:42:02	febafe75-5491-49f1-91f6-fb9431fe71c3	Error : secret option required for sessions
-20240611	06:42:08	01b3dafb-3c7c-4ada-a733-f7a5ac30ebb1	Error : secret option required for sessions
-20240611	06:42:09	d95a891b-f371-4136-affa-925ee8835cfe	Error : secret option required for sessions
-20240611	06:42:09	abe741ea-485d-47b9-9465-592e14f97478	Error : secret option required for sessions
-20240611	06:42:10	05ba4b23-636e-483c-ad13-524040d1e934	Error : secret option required for sessions
-20240611	06:42:10	22e92186-35bf-4ec6-adcd-63094c84f5b4	Error : secret option required for sessions
-20240611	06:42:10	1d74b048-eb2f-4013-a558-f4930796b875	Error : secret option required for sessions
-20240611	06:42:10	90648aed-7616-4f67-b36b-eed85631e60b	Error : secret option required for sessions
-20240611	06:42:10	13ae83bc-9eed-43fc-b76f-c0d1db210b2b	Error : secret option required for sessions
-20240611	06:42:11	81af5ecc-5e72-4c17-9b3f-886fa5bed657	Error : secret option required for sessions
-20240611	06:42:11	927c669b-ce40-4e2b-86cd-ecc5ddf9bea1	Error : secret option required for sessions
-20240611	06:42:11	9730686f-2f25-47c4-8695-e19e99ce4114	Error : secret option required for sessions
-20240611	06:42:11	246c5078-c9f5-4539-afb5-1ddb07c97c6c	Error : secret option required for sessions
-20240611	06:43:48	89d998c1-6a4e-453f-abf9-6b9fa3d22718	Error : secret option required for sessions
-20240611	06:43:48	6abf165b-472d-4668-ba4c-d896dbd28a9a	Error : secret option required for sessions
-20240611	06:45:29	798b36d4-9661-492e-a2e4-56425ab78dd8	Error : Login sessions require session support. Did you forget to use `express-session` middleware?
-20240611	06:45:29	003edc01-23ac-4a9d-bd97-b449bd669d7c	Error : Login sessions require session support. Did you forget to use `express-session` middleware?
-20240611	06:49:15	c1bde58a-bec5-43d5-b81e-2bce9d2e0285	Error : secret option required for sessions
-20240611	06:49:15	b9a958d9-e8f6-4d57-a7d8-25701f7f4ab1	Error : secret option required for sessions
-20240611	06:51:47	9ebfa62c-5939-4b4a-86c5-81efcca875fb	Error : secret option required for sessions
-20240611	06:51:47	e8acad30-df8a-4eb2-879d-95253c06f998	Error : secret option required for sessions
-20240611	07:57:08	8ece8ab0-3da2-4ef7-af0b-3cad8e6cfc37	Error : Unknown authentication strategy "google"
-20240611	07:57:10	fa485a95-1fc6-491a-adf7-acda725b4aeb	Error : Unknown authentication strategy "google"
-20240611	07:58:44	e46401a2-b1b1-4cec-9c4e-5a362792c640	Error : Unknown authentication strategy "google"
-20240611	07:59:27	6452c398-7ca0-482b-b7b0-7f12fe3b37ce	Error : Unknown authentication strategy "google"
-20240614	10:39:50	d78064f8-523d-43b3-967e-1cfbaaaa10d6	TokenError : Bad Request
-20240614	10:40:11	de2e487b-dfd7-43d4-b710-51d91b5c3ab7	TokenError : Bad Request
-20240614	10:43:17	81c6adbf-faae-4064-aa5d-4adc2ba35dec	TokenError : Bad Request
-20240614	11:04:18	c1e023d6-ed10-4e22-8fb5-1edfcd16c5a3	TokenError : Bad Request
-20240614	11:12:50	bd096ef1-350f-4a60-9b30-46911457cc1d	InternalOAuthError : Failed to obtain access token
-20240614	11:19:30	a81198e6-3c08-49ad-b5b9-53d43dd8134f	TokenError : Bad Request
-20240614	11:20:32	8f0dc466-c443-4988-b7c5-b7c06d23482e	Error : secret option required for sessions
-20240614	11:20:33	a4bdd16a-ad3f-4eff-b0d7-46c575144756	Error : secret option required for sessions
-20240614	11:20:34	a4607a82-9602-421f-9137-b7b7937e7d25	Error : secret option required for sessions
-20240614	11:30:34	e707488c-d57b-4d72-bb6b-e7007102caca	TokenError : Bad Request
-20240614	11:33:07	5826ad14-49ac-413f-891f-7e46cd209943	TokenError : Bad Request
-20240614	11:33:09	45913967-9319-4ef6-9471-1e1a93a469f0	TokenError : Bad Request
-20240614	11:35:17	a11fe131-a53a-445e-a6c6-3b9aeccac41c	ReferenceError : user is not defined
-20240614	11:39:45	bbc13d78-bfce-4c6c-889f-e5e34c43aebd	TokenError : Bad Request
+20240616	14:11:42	a2e7f840-f620-47e4-886c-e58349a39e0d	ValidationError : Job validation failed: workType: `intership` is not a valid enum value for path `workType`.
+20240616	14:17:09	0cf37b43-90b7-4718-8d92-7dfbb96ae221	TypeError : Cannot read properties of undefined (reading 'userid')
+20240616	14:17:43	00860123-3011-4882-873b-bf62a499df83	TypeError : Cannot read properties of undefined (reading 'id')
+20240616	14:18:00	a4fef9f8-c70d-4528-bc57-88864368a119	TypeError : Cannot read properties of undefined (reading 'email')
+20240616	14:19:32	423df321-98b9-4e23-be58-f64164be7eb2	TypeError : Cannot read properties of undefined (reading 'userId')
+20240616	15:11:56	ade856bd-d4ae-4c4f-95d7-b5bdaaadfbc0	TypeError : Cannot read properties of undefined (reading 'userId')
+20240616	15:12:26	4bdfb51a-6f20-4c5f-a5bb-4a1e1a039fb9	TypeError : Cannot read properties of undefined (reading 'userId')
+20240616	15:14:28	013d5b6e-ebe1-4fbd-9adc-7c191fec7bb5	TypeError : Cannot read properties of undefined (reading 'id')
+20240616	15:17:25	7faaa5a0-ac56-4344-a0e3-15ded4fd9662	TypeError : Cannot read properties of undefined (reading '_id')
+20240616	15:21:05	a76e466d-92d6-40b7-86ce-c718995251f4	TypeError : Cannot read properties of undefined (reading 'userId')
+20240616	15:21:45	81398a50-21e4-4d6a-bd1e-2416decb0ead	TypeError : Cannot read properties of undefined (reading 'userId')
+20240616	15:23:05	07b3d7b0-4fcc-44a0-a25a-817ea315cf01	TypeError : Cannot read properties of undefined (reading 'userId')
+20240616	20:27:59	fe583bcc-1d87-41c3-a193-b59e860ee0ff	TypeError : Cannot read properties of undefined (reading 'userId')
+20240616	20:28:43	07ed3acd-1dfe-430b-87a7-57ddce0e73a5	TypeError : Cannot read properties of undefined (reading 'id')
+20240616	20:30:03	1b6a0d9d-e860-47af-8eb5-cb87e6837ce6	TypeError : Cannot read properties of undefined (reading 'userId')
+20240616	20:30:35	efa886b4-256a-469b-be82-a984022eb9e8	TypeError : Cannot read properties of undefined (reading '_id')
+20240616	20:37:41	b177f105-e53b-49f3-b047-5dab22f7ca06	Error : read ECONNRESET
+20240616	21:29:01	5a500f93-92c0-4eab-909b-92b6a3ffb660	TypeError : moment(...).month(...).year(...).format is not a function
+20240616	21:32:45	d4e328bd-0ac4-4171-87cc-b24181ae2c63	TypeError : moment(...).month(...).year(...).format is not a function
+20240616	21:43:48	c43042cb-9670-4057-babd-184783337c2f	TypeError : moment(...).month(...).year(...).format is not a function
+20240616	21:49:44	4f1d37c6-061c-45b4-9935-11131a4fb2cb	TypeError : moment(...).month(...).year(...).format is not a function

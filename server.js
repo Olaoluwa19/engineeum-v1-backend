@@ -59,8 +59,8 @@ app.use("/refresh", require("./routes/refresh"));
 app.use("/logout", require("./routes/logout"));
 
 app.use(verifyJWT);
-app.use("/jobs", require("./routes/api/jobs"));
 app.use("/users", require("./routes/api/users"));
+app.use("/jobs", require("./routes/api/jobs"));
 
 app.all("*", (req, res) => {
   res.status(404);
