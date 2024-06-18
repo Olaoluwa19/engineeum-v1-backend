@@ -22,3 +22,12 @@
 20240616	22:04:50	9eee02ff-f842-4119-ab08-da244b9c1d34	TypeError : moment(...).month(...).year(...).format is not a function
 20240616	22:11:28	3fcb360d-c502-46da-8485-defd71e5dfbf	TypeError : moment(...).month(...).year(...).format is not a function
 20240616	22:14:14	55719506-e655-44df-aed9-d101f161ddfe	TypeError : moment(...).month(...).year(...).format is not a function
+20240618	00:53:04	adfd60cb-3c0e-4b14-a972-a6ceb7a918d4	TypeError : Cannot read properties of undefined (reading 'userId')
+20240618	00:57:15	70b8a3cb-27a4-484c-848a-9f3654e075a1	TypeError : Cannot read properties of undefined (reading 'userId')
+20240618	01:06:06	29f3df23-8718-4e43-8164-556324933ebb	Error : read ECONNRESET
+20240618	01:37:04	55998e58-71af-4fe3-ba7b-53b8dc41473d	ReferenceError : Cannot access 'queryResult' before initialization
+20240618	01:38:10	dcf685f3-be13-4c1a-a4f4-c93444a93f55	TypeError : Assignment to constant variable.
+20240618	01:39:24	538109a3-31c1-426e-8fe6-3c368af70243	TypeError : Assignment to constant variable.
+20240618	02:27:31	c602051e-0cf1-4226-9910-86db01568c82	TypeError : Cannot read properties of undefined (reading 'userId')
+20240618	02:39:35	cba81695-248c-4db0-9e84-10dbb4e5b366	TypeError : Cannot set properties of undefined (setting 'userId')
+20240618	02:42:05	a09a6071-ea4f-43f0-a9bc-ee5d1bb1bd51	TypeError : Cannot set properties of undefined (setting 'userId')
