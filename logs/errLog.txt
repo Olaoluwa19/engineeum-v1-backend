@@ -31,3 +31,13 @@
 20240618	02:27:31	c602051e-0cf1-4226-9910-86db01568c82	TypeError : Cannot read properties of undefined (reading 'userId')
 20240618	02:39:35	cba81695-248c-4db0-9e84-10dbb4e5b366	TypeError : Cannot set properties of undefined (setting 'userId')
 20240618	02:42:05	a09a6071-ea4f-43f0-a9bc-ee5d1bb1bd51	TypeError : Cannot set properties of undefined (setting 'userId')
+20240620	02:58:03	61c9172b-8897-4528-93bd-92b1e57cc7a6	ReferenceError : queryResult is not defined
+20240620	02:59:30	647c59f8-86c6-41cd-bb63-ca77a6c3a380	TypeError : jobs.skip is not a function
+20240620	03:03:40	3ddb81c1-1cd8-4d00-8dfb-aedd4905453b	TypeError : The comparison function must be either a function or undefined
+20240620	03:04:01	b827c16c-d124-42a0-9b9b-3fdbd97c47e7	TypeError : The comparison function must be either a function or undefined
+20240620	03:10:53	8d7308fc-1eae-4b9a-b4f8-031e1960881f	Error : read ECONNRESET
+20240620	03:14:37	269eb625-379d-4c2d-81cd-06ec20f8c662	TypeError : The comparison function must be either a function or undefined
+20240620	03:20:20	47114a14-f902-4fd2-afea-2d638a62adb1	Error : read ECONNRESET
+20240620	03:22:12	791fd832-9330-4bd5-9cb2-6e89a5dd00fc	Error : read ECONNRESET
+20240620	03:24:05	a5633e50-d7d9-4cce-aa25-01fa5ef6eb26	MongoServerSelectionError : getaddrinfo ENOTFOUND ac-ulrfnzw-shard-00-00.widhjlv.mongodb.net
+20240620	03:38:09	ad6a9092-3f38-4505-b101-4bffd83e4f52	ReferenceError : totalJobs is not defined

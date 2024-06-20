@@ -22,9 +22,9 @@ const getJobs = async (req, res) => {
     ];
   }
 
-  let jobs = await Job.find(filter);
+  let queryResult = Job.find(filter);
 
-  if (!jobs) return res.status(204).json({ message: "No jobs found." });
+  if (!queryResult) return res.status(204).json({ message: "No jobs found." });
 
   const sortMapping = {
     latest: "-createdAt",
@@ -34,18 +34,21 @@ const getJobs = async (req, res) => {
   };
 
   if (sort in sortMapping) {
-    queryResult = jobs.sort(sortMapping[sort]);
+    queryResult = queryResult.sort(sortMapping[sort]);
   }
 
-  // if (sort) {
-  //   if (sort === "asc") {
-  //     jobs = jobs.sort((a, b) => a.createdAt - b.createdAt);
-  //   } else if (sort === "desc") {
-  //     jobs = jobs.sort((a, b) => b.createdAt - a.createdAt);
-  //   }
-  // }
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 10;
+  const skip = (page - 1) * limit;
 
-  res.status(200).json({ totaljobs: jobs.length, jobs });
+  queryResult = queryResult.skip(skip).limit(limit);
+  //job count
+  const totalJobs = await Job.countDocuments(queryResult);
+  const numOfPage = Math.ceil(totalJobs / limit);
+
+  const jobs = await queryResult;
+
+  res.status(200).json({ totalJobs, jobs, numOfPage });
 };
 
 // const createJob = async (req, res) => {
