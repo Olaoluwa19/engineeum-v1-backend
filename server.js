@@ -46,10 +46,10 @@ app.use(session(sessionConfig()));
 app.use("/", express.static(path.join(__dirname, "/public")));
 
 // handle google Login's
-passport.use(googleStrategy);
+// passport.use(googleStrategy);
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Routes
 app.use("/", require("./routes/root"));
