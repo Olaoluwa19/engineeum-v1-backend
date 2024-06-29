@@ -47,3 +47,20 @@
 20240627	03:59:01	530fa584-8168-42fa-9649-5900bd6aa266	Error : ENOENT: no such file or directory, stat 'C:\Users\ROTIMI\Documents\engineeum-v1\routes\ ..\views\index.html'
 20240627	04:04:02	5a6347c6-e240-4d3f-bc15-f897e660c0b1	Error : ENOENT: no such file or directory, stat 'C:\Users\ROTIMI\Documents\engineeum-v1\routes\ ..\views\index.html'
 20240627	04:15:05	ed357ffc-890e-4fbb-b0c3-94f392447ca2	Error : ENOENT: no such file or directory, stat 'C:\Users\ROTIMI\Documents\engineeum-v1\routes\ ..\views\index.html'
+20240627	06:41:22	f9a6d360-c1a0-4dda-959a-58578e5b1925	TokenError : Bad Request
+20240627	06:42:09	6b9ef385-766b-4e44-9d6e-2ce9bf2a758d	TokenError : Bad Request
+20240627	06:47:59	c8911b3c-e1e1-4429-87d8-257517ec044f	TokenError : Bad Request
+20240627	07:17:30	87e5e020-49a1-4345-b529-5f5cc5e78bab	TokenError : Bad Request
+20240629	02:24:32	a67658c4-1df4-43c8-89aa-3db44dc2fc6a	TokenError : Bad Request
+20240629	02:29:51	233d6f6d-059b-40b1-8632-4c3876190591	TokenError : Bad Request
+20240629	02:32:04	90fcaf9e-c884-46e6-8e08-99e747df6bcd	TokenError : Bad Request
+20240629	02:32:19	1c87d195-c65b-45f6-b855-0877ebbd7250	TypeError : self._verify is not a function
+20240629	03:11:16	8acc6f73-48b2-4fdf-a45b-a7634cf9e459	ReferenceError : User is not defined
+20240629	03:15:08	6e575e7e-2e81-4671-a6b4-1cd97d9c45a2	TypeError : Cannot read properties of undefined (reading 'id')
+20240629	03:18:24	df8a6da7-4cdc-43d5-a76b-265811774181	TypeError : Cannot read properties of undefined (reading 'id')
+20240629	03:19:11	580b7f41-3af5-43f8-abe1-64270a2b3e20	TypeError : Cannot read properties of undefined (reading 'id')
+20240629	03:27:49	e540294e-3599-4d57-ae13-6d143f18d6af	TypeError : Cannot read properties of undefined (reading 'name')
+20240629	03:30:59	5cb4064b-875e-4b11-aafd-5cd87b4eadd7	TypeError : cb is not a function
+20240629	03:36:21	4a9eeeb8-486f-4380-a25f-85ac36c07bf7	TypeError : Cannot read properties of undefined (reading 'name')
+20240629	04:08:07	3e7d572e-4f7d-4b30-a66b-7978893f3225	TypeError : Cannot read properties of undefined (reading 'name')
+20240629	04:15:22	c7e7f29f-b939-460b-9c90-479985f12e31	TypeError : Cannot read properties of undefined (reading 'name')

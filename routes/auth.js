@@ -2,16 +2,20 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const authController = require("../controllers/authController");
-const googleOAuth = require("../controllers/googleOAuth");
 
-router.post("/", authController.handleLogin);
-router.route("/google").get(googleOAuth.authenticateGoogle);
+router
+  .route("/google")
+  .get(passport.authenticate("google", { scope: ["email", "profile"] }));
 
 router
   .route("/google/callback")
   .get(
-    passport.authenticate("google", { failureRedirect: "/auth" }),
-    googleOAuth.redirectHome
+    passport.authenticate("google", { failureRedirect: "/register" }),
+    function (req, res) {
+      // Successful authentication, redirect home.
+      res.redirect("/");
+    }
   );
+router.post("/", authController.handleLogin);
 
 module.exports = router;

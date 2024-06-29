@@ -1,16 +1,25 @@
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const verifyGoogleCallback = require("./verifyGoogleCallback");
 const googleConfig = require("../config/googleConfig");
+const User = require("../models/User");
 const passport = require("passport");
 
-const googleStrategy = new GoogleStrategy(googleConfig, verifyGoogleCallback);
+passport.use(
+  new GoogleStrategy(googleConfig, function (
+    accessToken,
+    refreshToken,
+    profile,
+    done
+  ) {
+    User.findOrCreate({ name: profile.name }, function (err, user) {
+      return done(err, user);
+    });
+  })
+);
 
-passport.serializeUser((user, cb) => {
-  cb(null, user);
+passport.serializeUser((user, done) => {
+  done(null, user);
 });
 
-passport.deserializeUser((user, cb) => {
-  cb(null, user);
+passport.deserializeUser((user, done) => {
+  done(null, user);
 });
-
-module.exports = googleStrategy;

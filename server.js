@@ -5,14 +5,14 @@ const app = express();
 const path = require("path");
 const cors = require("cors");
 const corsOptions = require("./config/corsOptions");
+const passport = require("passport");
+require("./middleware/googleStrategy");
 const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
 const verifyJWT = require("./middleware/verifyJWT");
 const cookieParser = require("cookie-parser");
 const credentials = require("./middleware/credentials");
 const mongoose = require("mongoose");
-const passport = require("passport");
-const googleStrategy = require("./middleware/googleStrategy");
 const session = require("express-session");
 const sessionConfig = require("./config/sessionConfig");
 const connectDB = require("./config/dbConn");
@@ -40,17 +40,15 @@ app.use(express.json());
 
 // middleware for cookies
 app.use(cookieParser());
-app.use(session(sessionConfig()));
 
 // serve static files
 app.use("/", express.static(path.join(__dirname, "/public")));
 
-// handle google Login's
-// passport.use(googleStrategy);
+//handle google login
+app.use(session(sessionConfig));
 
-// app.use(passport.initialize());
-// app.use(passport.session());
-
+app.use(passport.initialize());
+app.use(passport.session());
 // Routes
 app.use("/", require("./routes/root"));
 app.use("/register", require("./routes/register"));
