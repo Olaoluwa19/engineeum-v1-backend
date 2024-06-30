@@ -1,5 +1,12 @@
+// API Documentation
+const swaggerUi = require("swagger-ui-express");
+const swaggerDoc = require("swagger-jsdoc");
+const swaggerOptions = require("./config/swaggerOptions");
+
+// Package imports
 require("dotenv").config();
 const express = require("express");
+// const expressLayout = require("express-ejs-layouts");
 require("express-async-errors");
 const app = express();
 const path = require("path");
@@ -22,6 +29,9 @@ const colors = require("colors");
 
 // connect to MongoDB
 connectDB();
+
+//Swagger api Config
+const spec = swaggerDoc(swaggerOptions);
 
 // custom middleware logger
 app.use(logger);
@@ -49,12 +59,16 @@ app.use(session(sessionConfig));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 // Routes
 app.use("/", require("./routes/root"));
 app.use("/register", require("./routes/register"));
 app.use("/auth", require("./routes/auth"));
 app.use("/refresh", require("./routes/refresh"));
 app.use("/logout", require("./routes/logout"));
+
+// swagger homeroute root
+app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(spec));
 
 app.use(verifyJWT);
 app.use("/users", require("./routes/api/users"));
