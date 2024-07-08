@@ -1,20 +1,24 @@
 paths:
-  /register:
+  /auth:
     post:
-      summary: register new user
+      summary: authenticate user
       tags:
       - Auth
       requestBody:
+        required: true
         content:
           application/json:
             schema:
               $ref: "#/components/schemas/User"
       responses:
         200:
-          description: user created successfully
+          description: login successfully
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/User"
         500:
           description: something went wrong
+        example:
+          email: janedoe@email.com
+          password: !Testing542$
