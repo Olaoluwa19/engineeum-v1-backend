@@ -10,6 +10,9 @@ paths:
           application/json:
             schema:
               $ref: "#/components/schemas/User"
+            example:
+              email: janedoe@email.com
+              password: "!Testing542$"
       responses:
         200:
           description: login successfully
@@ -17,8 +20,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/User"
+              example:
+                message: login successfully
         500:
           description: something went wrong
-        example:
-          email: janedoe@email.com
-          password: !Testing542$
