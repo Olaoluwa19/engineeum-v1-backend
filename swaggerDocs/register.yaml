@@ -1,3 +1,8 @@
+components:
+  schemas:
+    User:
+      $ref: "#/components/schemas/User"
+
 paths:
   /register:
     post:
@@ -10,11 +15,34 @@ paths:
             schema:
               $ref: "#/components/schemas/User"
       responses:
-        200:
-          description: user created successfully
+        201:
+          description: user registered successfully
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/User"
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+              examples:
+                invalid-user:
+                  summary: Select a valid user account.
+                  value:
+                    error: "Invalid user"
+                short password length:
+                  summary: Password must be greater than 6 characters.
+                  value:
+                    error: "Password must be greater than 6 characters."
+                weak-password:
+                  summary: Password must contain one or more symbol, alphanumerical character, a lowercase, and an uppercase letter.
+                  value:
+                    error: "Weak password"
+                user-exists:
+                  summary: Email already registered. Please login.
+                  value:
+                    error: "User already exists. Please login"
         500:
           description: something went wrong

@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const getAllUser = async (req, res) => {
   const users = await User.find().select("-password");
   if (!users) return res.status(204).json({ message: "No Users found." });
-  res.json(users);
+  res.status(200).json(users);
 };
 
 const updateUser = async (req, res) => {

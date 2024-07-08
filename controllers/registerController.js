@@ -9,7 +9,7 @@ const createNewUser = async (req, res, next) => {
     if (!roles) {
       return res.status(400).json({
         success: false,
-        message: "Select a valid user account.",
+        message: "Invalid user",
       });
     }
 
@@ -32,8 +32,7 @@ const createNewUser = async (req, res, next) => {
     if (!passwordRegex.test(password)) {
       return res.status(400).json({
         success: false,
-        message:
-          "Password must contain one or more symbol, alphanumerical character, a lowercase, and an uppercase letter.",
+        message: "Weak password.",
       });
     }
 
@@ -42,7 +41,7 @@ const createNewUser = async (req, res, next) => {
       // next("Email already registered. Please login");
       return res.status(409).json({
         success: false,
-        message: "Email already registered. Please login",
+        message: "User already exists. Please login",
       });
     } //conflict
     const hashedPwd = await bcrypt.hash(password, 10);

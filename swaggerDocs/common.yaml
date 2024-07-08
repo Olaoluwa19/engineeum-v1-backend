@@ -37,4 +37,6 @@ components:
 
 tags:
 - name: Auth
-  description: authentication API's
+  description: authentication route
+- name: Users
+  description: User's API

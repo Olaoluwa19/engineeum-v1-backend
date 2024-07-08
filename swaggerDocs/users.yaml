@@ -1,0 +1,72 @@
+components:
+  schemas:
+    User:
+      $ref: "#/components/schemas/User"
+
+paths:
+  /users:
+    get:
+      summary: get all user in the database
+      tags:
+      - Users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        200:
+          description: Displays all user in the database.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        204:
+          description: No Users found.
+
+    put:
+      summary: Update's existing user in the database.
+      tags:
+      - Users
+      requestbody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        201:
+          description: User updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+              examples:
+                No userID:
+                  summary: Enter user id.
+                  value:
+                    error: "User id is required."
+                invalid-userID:
+                  summary: Enter a valid user id.
+                  value:
+                    error: "No user id matches id."
+                other errors:
+                  summary: Server error or more.
+                  value:
+                    error: "Error in updating user details"
+        403:
+          description: You can not change your username.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        500:
+          description: something went wrong
+
+# delete:
+# get/:id:
