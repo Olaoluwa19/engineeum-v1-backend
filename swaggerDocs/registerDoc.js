@@ -1,7 +1,7 @@
 /**
  * @swagger
  * components:
- *   schema:
+ *   schemas:
  *     User:
  *       type: object
  *       required:
@@ -29,11 +29,40 @@
  *         location:
  *           type: string
  *           description: User location, city or country
- *   example:
- *     id: ka6838t28yhdhbic
- *     name: Jane
- *     lastName: Doe
- *     email: janedoe@email.com
- *     password: !Testing542$
- *     location: Lagos, Nigeria
+ *       example:
+ *         id: ka6838t28yhdhbic
+ *         name: Jane
+ *         lastName: Doe
+ *         email: janedoe@email.com
+ *         password: !Testing542$
+ *         location: Lagos, Nigeria
+ */
+
+/**
+ * @swagger
+ * tags:
+ *  name: Auth
+ *  description: authetication apis
+ */
+
+/**
+ * @swagger
+ * /register:
+ *  post:
+ *    summary: register new user
+ *    tags: [Auth]
+ *    requestBody:
+ *    content:
+ *      application/json:
+ *        schema:
+ *          $ref: "#/components/schemas/User"
+ *    responses:
+ *      200:
+ *        description: user created successfully
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: "#/components/schemas/User"
+ *      500:
+ *        description: internal server error
  */

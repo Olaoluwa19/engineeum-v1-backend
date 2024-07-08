@@ -64,3 +64,6 @@
 20240629	03:36:21	4a9eeeb8-486f-4380-a25f-85ac36c07bf7	TypeError : Cannot read properties of undefined (reading 'name')
 20240629	04:08:07	3e7d572e-4f7d-4b30-a66b-7978893f3225	TypeError : Cannot read properties of undefined (reading 'name')
 20240629	04:15:22	c7e7f29f-b939-460b-9c90-479985f12e31	TypeError : Cannot read properties of undefined (reading 'name')
+20240705	03:31:54	081a1cae-23b4-45fc-8ffe-bf01c7c0bbfa	Error : Not alloed by CORS
+20240705	03:31:54	8aafcca4-813f-4acc-b3d0-de613f08c8f3	Error : Not alloed by CORS
+20240705	06:44:26	2f2f6545-07cb-49bd-8698-ee70ebbb3ea6	Error : Not alloed by CORS

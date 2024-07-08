@@ -1,12 +1,6 @@
-// API Documentation
-const swaggerUi = require("swagger-ui-express");
-const swaggerDoc = require("swagger-jsdoc");
-const swaggerOptions = require("./config/swaggerOptions");
-
 // Package imports
 require("dotenv").config();
 const express = require("express");
-// const expressLayout = require("express-ejs-layouts");
 require("express-async-errors");
 const app = express();
 const path = require("path");
@@ -18,6 +12,12 @@ const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
 const verifyJWT = require("./middleware/verifyJWT");
 const cookieParser = require("cookie-parser");
+
+// API Documentation
+const swaggerDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+const swaggerOptions = require("./config/swaggerOptions");
+
 const credentials = require("./middleware/credentials");
 const mongoose = require("mongoose");
 const session = require("express-session");

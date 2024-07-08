@@ -1,13 +1,19 @@
+const path = require("path");
+
 const swaggerOptions = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "engineeum-v1",
+      title: "Engineeum API project",
       description: "Engineeum for AEC undergraduate.",
     },
-    servers: [{ url: "http://localhost:3000" }],
+    servers: [
+      {
+        url: "http://localhost:3000",
+      },
+    ],
   },
-  apis: ["/swaggerDocs/*.js"],
+  apis: [path.join(__dirname, "..", "swaggerDocs", "*.yaml")],
 };
 
 module.exports = swaggerOptions;
