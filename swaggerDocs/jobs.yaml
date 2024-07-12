@@ -1,0 +1,71 @@
+components:
+  schemas:
+    Job:
+      $ref: "#/components/schemas/Job"
+
+paths:
+  /jobs:
+    get:
+      summary: Get jobs
+      description: Retrieve a list of jobs
+      tags:
+      - Jobs
+      parameters:
+      - in: query
+        name: status
+        schema:
+          type: string
+        description: Filter by job status
+      - in: query
+        name: workType
+        schema:
+          type: string
+        description: Filter by job work type
+      - in: query
+        name: search
+        schema:
+          type: string
+        description: Search for jobs by company or position
+      - in: query
+        name: sort
+        schema:
+          type: string
+        description: Sort jobs by latest, oldest, a-z, or z-a
+      - in: query
+        name: page
+        schema:
+          type: integer
+        description: Page number
+      - in: query
+        name: limit
+        schema:
+          type: integer
+        description: Number of jobs per page
+      responses:
+        200:
+          description: Jobs retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalJobs:
+                    type: integer
+                    description: Total number of jobs
+                  jobs:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Job"
+                  numOfPage:
+                    type: integer
+                    description: Number of pages
+        204:
+          description: No jobs found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: No jobs found message

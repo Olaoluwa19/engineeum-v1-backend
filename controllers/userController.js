@@ -64,7 +64,7 @@ const deleteUser = async (req, res) => {
   const user = await User.findOne({ _id: req.body.id }).exec();
   const result = await user.deleteOne({ _id: req.body.id });
 
-  res.json(result);
+  res.status(200).json(result);
 };
 
 const filterUsers = async (req, res) => {};
@@ -82,7 +82,7 @@ const getUser = async (req, res) => {
     .select("-password")
     .exec();
 
-  res.json(user);
+  res.status(200).json(user);
 };
 
 module.exports = {
