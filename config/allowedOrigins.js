@@ -4,6 +4,7 @@ const allowedOrigins = [
   "http://localhost:3500",
   "https://accounts.google.com",
   "https://apis.google.com/js/platform.js",
+  "https://swagger.io",
 ];
 
 module.exports = allowedOrigins;

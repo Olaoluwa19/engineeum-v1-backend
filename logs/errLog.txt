@@ -1,0 +1,2 @@
+20240729	03:43:23	ef81e920-702a-4761-a8e4-f0bc2a2a4a5d	Error : Not alloed by CORS
+20240729	03:46:23	3a2f4316-7e8b-4e03-a6ba-53ed30e8055f	Error : Not alloed by CORS

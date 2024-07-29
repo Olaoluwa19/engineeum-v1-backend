@@ -1,15 +1,16 @@
-components:
-  schemas:
-    Job:
-      $ref: "#/components/schemas/Job"
 
+openapi: 3.0.0
+info:
+  title: Job API
+  description: API for managing jobs
+  version: 1.0.0
+servers:
+- url: /api/jobs
 paths:
   /jobs:
     get:
       summary: Get jobs
       description: Retrieve a list of jobs
-      tags:
-      - Jobs
       parameters:
       - in: query
         name: status
@@ -20,27 +21,17 @@ paths:
         name: workType
         schema:
           type: string
-        description: Filter by job work type
+        description: Filter by work type
       - in: query
         name: search
         schema:
           type: string
-        description: Search for jobs by company or position
+        description: Search by company or position
       - in: query
         name: sort
         schema:
           type: string
-        description: Sort jobs by latest, oldest, a-z, or z-a
-      - in: query
-        name: page
-        schema:
-          type: integer
-        description: Page number
-      - in: query
-        name: limit
-        schema:
-          type: integer
-        description: Number of jobs per page
+        description: Sort by latest, oldest, a-z, or z-a
       responses:
         200:
           description: Jobs retrieved successfully
@@ -51,21 +42,153 @@ paths:
                 properties:
                   totalJobs:
                     type: integer
-                    description: Total number of jobs
                   jobs:
                     type: array
                     items:
-                      $ref: "#/components/schemas/Job"
+                      $ref: '#/components/schemas/Job'
                   numOfPage:
                     type: integer
-                    description: Number of pages
         204:
           description: No jobs found
+    post:
+      summary: Create job
+      description: Create a new job
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+      responses:
+        201:
+          description: Job created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        400:
+          description: Invalid request
+  /jobs/{id}:
+    get:
+      summary: Get job by ID
+      description: Retrieve a job by ID
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: Job ID
+      responses:
+        200:
+          description: Job retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        404:
+          description: Job not found
+    put:
+      summary: Update job
+      description: Update an existing job
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: Job ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+      responses:
+        200:
+          description: Job updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        400:
+          description: Invalid request
+    delete:
+      summary: Delete job
+      description: Delete a job by ID
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: Job ID
+      responses:
+        200:
+          description: Job deleted successfully
+        404:
+          description: Job not found
+  /user/jobs:
+    get:
+      summary: Get user jobs
+      description: Retrieve a list of jobs created by the user
+      parameters:
+      - in: query
+        name: status
+        schema:
+          type: string
+        description: Filter by job status
+      - in: query
+        name: workType
+        schema:
+          type: string
+        description: Filter by work type
+      - in: query
+        name: search
+        schema:
+          type: string
+        description: Search by company or position
+      - in: query
+        name: sort
+        schema:
+          type: string
+        description: Sort by latest, oldest, a-z, or z-a
+      responses:
+        200:
+          description: Jobs retrieved successfully
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  message:
-                    type: string
-                    description: No jobs found message
+                  totaljobs:
+                    type: integer
+                  userJobs:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Job'
+        204:
+          description: No jobs found
+  /user/stats:
+    get:
+      summary: Get user job stats
+      description: Retrieve job statistics for the user
+      responses:
+        200:
+          description: Stats retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalJStats:
+                    type: integer
+                  defaultStats:
+                    type: object
+                    properties:
+                      pending:
+                        type: integer
+                      reject:
+                        type: integer
+                      interview:
+                        type: integer
